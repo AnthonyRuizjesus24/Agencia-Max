@@ -1,0 +1,16 @@
+/* Estilos específicos para la página de destinos */
+.search-bar {
+    margin: 2rem 0;
+  }
+  
+  .destination-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .destination-card img {
+    width: 100%;
+    height: auto;
+  }
+  

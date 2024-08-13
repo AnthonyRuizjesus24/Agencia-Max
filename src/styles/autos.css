@@ -1,0 +1,12 @@
+/* Estilos específicos para la página de autos */
+.car-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .car-card img {
+    width: 100%;
+    height: auto;
+  }
+  

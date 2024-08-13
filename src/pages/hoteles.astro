@@ -1,0 +1,16 @@
+---
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+import SearchBar from '../Components/SearchBar.astro';
+import HotelCard from '../Components/HotelCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <Header />
+  <SearchBar placeholder="Buscar hoteles..." />
+  <section class="hoteles">
+    <h2>Hoteles Disponibles</h2>
+    <!-- Aquí puedes usar HotelCard para mostrar hoteles -->
+  </section>
+  <Footer />
+</MainLayout>

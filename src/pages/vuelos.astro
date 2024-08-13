@@ -1,0 +1,16 @@
+---
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+import SearchBar from '../Components/SearchBar.astro';
+import FlightCard from '../Components/FlightCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <Header />
+  <SearchBar placeholder="Buscar vuelos..." />
+  <section class="vuelos">
+    <h2>Vuelos Disponibles</h2>
+    <!-- Aquí puedes usar FlightCard para mostrar vuelos -->
+  </section>
+  <Footer />
+</MainLayout>

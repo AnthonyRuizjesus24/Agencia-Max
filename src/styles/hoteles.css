@@ -1,0 +1,12 @@
+/* Estilos específicos para la página de hoteles */
+.hotel-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hotel-card img {
+    width: 100%;
+    height: auto;
+  }
+  

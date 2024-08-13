@@ -1,0 +1,16 @@
+---
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+import SearchBar from '../Components/SearchBar.astro';
+import DestinationCard from '../Components/DestinationCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <Header />
+  <SearchBar placeholder="Buscar destinos..." />
+  <section class="destinos">
+    <h2>Todos los Destinos</h2>
+    <!-- Aquí puedes usar DestinationCard para mostrar todos los destinos -->
+  </section>
+  <Footer />
+</MainLayout>

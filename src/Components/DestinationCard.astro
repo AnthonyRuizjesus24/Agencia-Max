@@ -1,0 +1,9 @@
+---
+const { image, title, description, link } = Astro.props;
+---
+<div class="destination-card">
+  <img src={image} alt={title} />
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link} class="btn-secondary">Ver Más</a>
+</div>

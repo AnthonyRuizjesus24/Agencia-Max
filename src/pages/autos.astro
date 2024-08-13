@@ -1,0 +1,16 @@
+---
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+import SearchBar from '../Components/SearchBar.astro';
+import CarCard from '../Components/CarCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <Header />
+  <SearchBar placeholder="Buscar autos..." />
+  <section class="autos">
+    <h2>Autos Disponibles</h2>
+    <!-- Aquí puedes usar CarCard para mostrar autos -->
+  </section>
+  <Footer />
+</MainLayout>

@@ -1,0 +1,16 @@
+---
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+import SearchBar from '../Components/SearchBar.astro';
+import OfferCard from '../Components/OfferCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <Header />
+  <SearchBar placeholder="Buscar ofertas..." />
+  <section class="ofertas">
+    <h2>Ofertas Especiales</h2>
+    <!-- Aquí puedes usar OfferCard para mostrar todas las ofertas -->
+  </section>
+  <Footer />
+</MainLayout>
