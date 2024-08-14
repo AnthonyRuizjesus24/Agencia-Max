@@ -3,7 +3,9 @@ const { image, name, price, link } = Astro.props;
 ---
 <div class="hotel-card">
   <img src={image} alt={name} />
-  <h2>{name}</h2>
-  <p>Desde {price}</p>
-  <a href={link} class="btn-secondary">Ver Hotel</a>
+  <div class="hotel-details">
+    <h2>{name}</h2>
+    <p>Desde {price}</p>
+    <a href={link} class="btn-secondary">Ver Hotel</a>
+  </div>
 </div>

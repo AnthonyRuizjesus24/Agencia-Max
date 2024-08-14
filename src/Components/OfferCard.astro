@@ -1,9 +1,11 @@
 ---
-const { image, title, price, link } = Astro.props;
+const { image, title, discount, link } = Astro.props;
 ---
 <div class="offer-card">
   <img src={image} alt={title} />
-  <h3>{title}</h3>
-  <p>Desde {price}</p>
-  <a href={link} class="btn-secondary">Ver Oferta</a>
+  <div class="offer-details">
+    <h2>{title}</h2>
+    <p>Descuento: {discount}</p>
+    <a href={link} class="btn-primary">Ver Oferta</a>
+  </div>
 </div>

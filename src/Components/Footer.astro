@@ -1,12 +1,99 @@
----
-// No necesita lógica
----
-<footer>
-    <p>&copy; 2024 Agencia de Viajes. Todos los derechos reservados.</p>
-    <ul>
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">Twitter</a></li>
-    </ul>
-  </footer>
-  
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 Your Travel Agency. All rights reserved.</p>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank" class="social-icon facebook" aria-label="Facebook"></a>
+      <a href="https://instagram.com" target="_blank" class="social-icon instagram" aria-label="Instagram"></a>
+      <a href="https://twitter.com" target="_blank" class="social-icon twitter" aria-label="Twitter"></a>
+    </div>
+  </div>
+</footer>
+<style>
+  /* Estilos del Footer */
+.footer {
+  background: linear-gradient(135deg, #007acc, #00bfae);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  background: #fff;
+  color: #007acc;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.25rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.socials a.facebook {
+  background: #3b5998;
+  color: #fff;
+}
+
+.socials a.instagram {
+  background: #e4405f;
+  color: #fff;
+}
+
+.socials a.twitter {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.socials a:hover {
+  background: #007acc;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .footer p {
+    font-size: 0.875rem;
+  }
+
+  .socials a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 1rem;
+  }
+}
+
+</style>

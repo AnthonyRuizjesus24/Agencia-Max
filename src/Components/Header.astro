@@ -1,78 +1,47 @@
 ---
+// Importación del componente y definición de enlaces
+import '../styles/header.css';
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/destinos", text: "Destinos" },
+  { href: "/ofertas", text: "Ofertas" },
+  { href: "/servicios", text: "Servicios" },
+  { href: "/testimonios", text: "Testimonios" },
+  { href: "/blog", text: "Blog" },
+  { href: "/contactos", text: "Contactos" },
+];
+
+const pathname = new URL(Astro.request.url).pathname;
 ---
-<style>
-  header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(90deg, #1a73e8, #4285f4, #2a9df4);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
+<div class="header-component">
+  <div class="container header-content">
+    <a href="/" class="logo">Max Travel</a>
+    <nav class="nav-links">
+      {links.map(link => (
+        <a href={link.href} class={pathname === link.href ? "active" : ""}>{link.text}</a>
+      ))}
+    </nav>
+    <div class="hamburger-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
 
-  nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-
-  li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
-  }
-
-  li a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
+ <script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      navLinks.classList.toggle('expanded');
+      hamburgerMenu.classList.toggle('open');
     }
 
-    ul {
-      flex-direction: column;
-      gap: 1rem;
+    const menuToggle = document.querySelector('.hamburger-menu');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', toggleMenu);
     }
-  }
-</style>
-
-<header>
-  <nav>
-    <div class="logo">AgenciaMax</div>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/destinos">Destinos</a></li>
-      <li><a href="/ofertas">Ofertas</a></li>
-      <li><a href="/servicios">Servicios</a></li>
-      <li><a href="/testimonios">Testimonios</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+  });
+</script>

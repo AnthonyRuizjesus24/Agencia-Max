@@ -1,0 +1,198 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-component {
+  background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #343a40;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+}
+
+.header-content {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+
+}
+
+.logo:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  position: relative; /* Permite que el z-index funcione correctamente */
+}
+
+.nav-links a {
+  color: #343a40;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.nav-links a:hover {
+  background-color: #e9ecef;
+  color: #495057;
+  transform: translateY(-2px);
+}
+
+/* Estilo general del menú de hamburguesa */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Tamaño del contenedor del menú hamburguesa */
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1000; /* Asegura que el menú hamburguesa esté por encima de otros elementos */
+}
+
+.hamburger-menu .bar {
+  width: 35px; /* Ancho de las barras */
+  height: 3px; /* Altura de las barras */
+  background: #343a40;
+  margin: 6px 0;
+  border-radius: 5px; /* Bordes redondeados más pronunciados */
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animación del hover */
+.hamburger-menu:hover .bar {
+  background-color: #007bff;
+}
+
+/* Animación de apertura del menú */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px); /* Ajustar el desplazamiento y rotación */
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px); /* Ajustar el desplazamiento y rotación */
+}
+
+/* Menú hamburguesa expandido con un fondo */
+.hamburger-menu.open {
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente cuando está abierto */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px;
+}
+
+/* Agregar efectos de sombra */
+.hamburger-menu {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+.hamburger-menu:hover {
+  transform: scale(1.1); /* Agrandar el tamaño ligeramente al pasar el mouse */
+}
+
+/* Estilo para el menú desplegable en dispositivos móviles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo más oscuro para mayor contraste */
+    position: fixed; /* Cambia de absolute a fixed para mantenerlo en la vista */
+    bottom: 0; /* Asegura que se muestre en la parte inferior */
+    left: 0;
+    height: 88.8vh; /* Ocupa la mitad de la altura de la vista */
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 1; /* Asegura que el menú de navegación se muestre por encima de otros elementos */
+    overflow-y: auto; /* Permite desplazamiento si hay muchos enlaces */
+  }
+
+  .nav-links.expanded {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+/* Estilo para dispositivos de escritorio */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none; /* Oculta el menú de hamburguesa en dispositivos de escritorio */
+  }
+
+  .nav-links {
+    display: flex; /* Muestra el menú de navegación en dispositivos de escritorio */
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}

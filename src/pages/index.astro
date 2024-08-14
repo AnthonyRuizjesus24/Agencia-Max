@@ -1,88 +1,111 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import HeroSection from '../Components/HeroSection.astro';
-import DestinationCard from '../Components/DestinationCard.astro';
-import OfferCard from '../Components/OfferCard.astro';
-import Newsletter from '../Components/Newsletter.astro';
-import '../styles/home.css';
-import { destinations, offers } from '../script/data';// Asegúrate de tener estos datos o ajusta según tus necesidades
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		
-      <Header />
-      
-      <HeroSection
-        title="¡Descubre el Mundo con Nosotros!"
-        subtitle="Las mejores ofertas y destinos para tus próximas vacaciones."
-        ctaText="Explorar Destinos"
-        ctaLink="/destinos"
-      />
-      
-      <section class="destinos">
-        <h2>Destinos Destacados</h2>
-        <div class="destinos-grid">
-          {destinations.map(destination => (
-            <DestinationCard
-              key={destination.id}
-              image={destination.image}
-              title={destination.title}
-              description={destination.description}
-              link={`/destinos/${destination.id}`}
-            />
-          ))}
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>MyF - Agencia de Viajes</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+<body>
+  <Header />
+  
+  <main>
+    <!-- Sección Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Explora el Mundo con MyF</h1>
+        <p>Encuentra las mejores ofertas y destinos para tus próximas vacaciones.</p>
+        <a href="/destinos" class="btn-primary">Descubre Más</a>
+      </div>
+    </section>
+
+    <!-- Ofertas Especiales -->
+    <section id="ofertas" class="section-padding">
+      <h2>Ofertas Especiales</h2>
+      <div class="offers-grid">
+        <!-- Ejemplo de Paquete -->
+        <div class="offer-card">
+          <img src="/path/to/image1.jpg" alt="Paquete a Bora Bora">
+          <div class="offer-info">
+            <h3>Paquete a Bora Bora</h3>
+            <p>Desde $999</p>
+            <a href="/" class="btn-secondary">Ver Detalles</a>
+          </div>
         </div>
-      </section>
-      
-      <section class="ofertas">
-        <h2>Ofertas Especiales</h2>
-        <div class="ofertas-grid">
-          {offers.map(offer => (
-            <OfferCard
-              key={offer.id}
-              image={offer.image}
-              title={offer.title}
-              price={offer.price}
-              link={`/ofertas/${offer.id}`}
-            />
-          ))}
+        <!-- Más ofertas -->
+        <div class="offer-card">
+          <img src="/path/to/image2.jpg" alt="Paquete a Paris">
+          <div class="offer-info">
+            <h3>Paquete a París</h3>
+            <p>Desde $799</p>
+            <a href="#detalles" class="btn-secondary">Ver Detalles</a>
+          </div>
         </div>
-      </section>
-      
-      <section class="servicios">
-        <h2>Nuestros Servicios</h2>
-        <p>Ofrecemos una amplia gama de servicios para hacer que tu experiencia de viaje sea inolvidable, desde vuelos y hoteles hasta transporte y excursiones.</p>
-      </section>
-      
-      <section class="testimonios">
-        <h2>Lo Que Dicen Nuestros Clientes</h2>
-        <div class="testimonios-list">
-          <!-- Aquí puedes agregar testimonios reales -->
-          <blockquote>
-            <p>"¡La mejor agencia de viajes! Todo estuvo perfectamente organizado y nos hicieron sentir como en casa."</p>
-            <footer>- Cliente Satisfecho</footer>
-          </blockquote>
-          <blockquote>
-            <p>"Recomiendo encarecidamente sus servicios. ¡Las ofertas son inigualables y el servicio al cliente excepcional!"</p>
-            <footer>- Otro Cliente Feliz</footer>
-          </blockquote>
+      </div>
+    </section>
+
+    <!-- Destinos Destacados -->
+    <section id="destinos" class="section-padding">
+      <h2>Destinos Destacados</h2>
+      <div class="destinations-grid">
+        <!-- Ejemplo de Destino -->
+        <div class="destination-card">
+          <img src="/path/to/image3.jpg" alt="Kyoto">
+          <div class="destination-info">
+            <h3>Kyoto</h3>
+            <p>Un destino lleno de historia y cultura.</p>
+            <a href="#detalles" class="btn-secondary">Explorar</a>
+          </div>
         </div>
-      </section>
-      
-      <Newsletter />
-      
-      <Footer />
-    
-	</body>
+        <!-- Más destinos -->
+        <div class="destination-card">
+          <img src="/path/to/image4.jpg" alt="Nueva York">
+          <div class="destination-info">
+            <h3>Nueva York</h3>
+            <p>La ciudad que nunca duerme.</p>
+            <a href="#detalles" class="btn-secondary">Explorar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog o Noticias -->
+    <section id="blog" class="section-padding">
+      <h2>Últimas Noticias</h2>
+      <div class="blog-posts">
+        <!-- Ejemplo de Artículo -->
+        <article class="blog-post">
+          <h3>Consejos para Viajar a Japón</h3>
+          <p>Descubre los mejores consejos para disfrutar de tu viaje a Japón.</p>
+          <a href="#leer" class="btn-secondary">Leer Más</a>
+        </article>
+        <!-- Más artículos -->
+        <article class="blog-post">
+          <h3>Guía de Viaje a París</h3>
+          <p>Todo lo que necesitas saber para tu viaje a la ciudad del amor.</p>
+          <a href="#leer" class="btn-secondary">Leer Más</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Suscripción al Boletín -->
+    <section id="suscripcion" class="newsletter">
+      <h2>Suscríbete a Nuestro Boletín</h2>
+      <form>
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <button type="submit" class="btn-primary">Suscribirse</button>
+      </form>
+    </section>
+  </main>
+
+  <Footer />
+</body>
 </html>
-
-

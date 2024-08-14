@@ -1,57 +1,41 @@
-/* Estilos específicos para la página de inicio */
-.hero {
-  background: url('/assets/images/hero.jpg') no-repeat center center;
-  background-size: cover;
-  color: #fff;
-  text-align: center;
-  padding: 5rem 1rem;
-}
+/* global.css */
 
-.hero-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.destinos, .ofertas {
-  padding: 2rem 1rem;
-}
-
-.destinos-grid, .ofertas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.servicios, .testimonios {
-  padding: 2rem 1rem;
-}
-
-.testimonios-list blockquote {
-  border-left: 4px solid #007bff;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.newsletter {
-  background-color: #f7f7f7;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.newsletter input[type="email"] {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.newsletter button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-}
+/* Variables de color para el modo claro */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --card-bg: #f9f9f9;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Variables de color para el modo oscuro */
+  [data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --button-bg: #1e3a8a;
+    --button-text: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Aplicación de variables de color */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.3s;
+  }
+  
+  /* Tarjetas */
+  .offer-card, .destination-card, .blog-post {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 8px var(--card-shadow);
+  }
+  

@@ -3,7 +3,9 @@ const { image, model, price, link } = Astro.props;
 ---
 <div class="car-card">
   <img src={image} alt={model} />
-  <h2>{model}</h2>
-  <p>Desde {price}</p>
-  <a href={link} class="btn-secondary">Ver Auto</a>
+  <div class="car-details">
+    <h2>{model}</h2>
+    <p>Desde {price}</p>
+    <a href={link} class="btn-secondary">Ver Auto</a>
+  </div>
 </div>

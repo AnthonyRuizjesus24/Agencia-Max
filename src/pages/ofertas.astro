@@ -1,16 +1,83 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import SearchBar from '../Components/SearchBar.astro';
-import OfferCard from '../Components/OfferCard.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/ofertas.css'
+const { image, title, discount, link } = Astro.props;
+
 ---
-<MainLayout>
-  <Header />
-  <SearchBar placeholder="Buscar ofertas..." />
-  <section class="ofertas">
-    <h2>Ofertas Especiales</h2>
-    <!-- Aquí puedes usar OfferCard para mostrar todas las ofertas -->
-  </section>
-  <Footer />
-</MainLayout>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>MyF - Ofertas</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/ofertas.css" />
+</head>
+<body>
+  <main>
+    <Header/>
+
+    <section class="search-filters">
+      <h2>Buscar Ofertas</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar ofertas..."/>
+      </div>
+      <div class="filters">
+        <select>
+          <option value="">Seleccionar Destino</option>
+          <!-- Add options here -->
+        </select>
+        <select>
+          <option value="">Tipo de Viaje</option>
+          <!-- Add options here -->
+        </select>
+        <input type="range" min="0" max="1000" step="50" />
+      </div>
+    </section>
+
+    <section class="featured-offers">
+      <h2>Ofertas Destacadas</h2>
+      <div class="offer-list">
+        <!-- Add OfferCard components here -->
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>Opiniones de Nuestros Clientes</h2>
+      <div class="testimonial-list">
+        <div class="testimonial-card">
+          <p>"¡Una experiencia increíble! Todo estuvo perfectamente organizado."</p>
+          <span>- Juan Pérez</span>
+        </div>
+        <!-- More testimonial cards -->
+      </div>
+    </section>
+
+    <section class="interactive-map">
+      <h2>Explora Nuestros Destinos</h2>
+      <div id="map"></div>
+    </section>
+
+    <section class="offers-calendar">
+      <h2>Calendario de Ofertas</h2>
+      <div id="calendar"></div>
+    </section>
+
+    <section class="call-to-action">
+      <h2>¿Listo para tu próxima aventura?</h2>
+      <p>Descubre nuestras ofertas exclusivas y reserva hoy mismo.</p>
+      <a href="/contacto" class="cta-button">Contáctanos</a>
+    </section>
+
+    <section class="additional-info">
+      <h2>Más Información</h2>
+      <p>Para más detalles sobre nuestras ofertas y destinos, no dudes en <a href="/contacto">ponerte en contacto con nosotros</a>.</p>
+    </section>
+
+    <Footer/>
+  </main>
+</body>
+</html>

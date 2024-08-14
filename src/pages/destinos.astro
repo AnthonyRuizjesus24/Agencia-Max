@@ -1,16 +1,58 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import SearchBar from '../Components/SearchBar.astro';
-import DestinationCard from '../Components/DestinationCard.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/destinos.css'
 ---
-<MainLayout>
-  <Header />
-  <SearchBar placeholder="Buscar destinos..." />
-  <section class="destinos">
-    <h2>Todos los Destinos</h2>
-    <!-- Aquí puedes usar DestinationCard para mostrar todos los destinos -->
-  </section>
-  <Footer />
-</MainLayout>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>MyF - Destinos</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/testimonios.css" />
+</head>
+
+<body>
+
+ <main>
+  <Header/>
+   <!-- Sección de Destinos -->
+<section class="destinations">
+  <div class="container">
+    <h1 class="section-title">Explora Nuestros Destinos</h1>
+    <p class="section-description">Descubre los destinos más fascinantes y comienza tu aventura hoy mismo.</p>
+    
+    <div class="destinations-grid">
+      <!-- Tarjeta de Destino -->
+      <div class="destination-card">
+        <img src="/path/to/destination1.jpg" alt="Destino 1">
+        <div class="destination-info">
+          <h2 class="destination-title">Bora Bora</h2>
+          <p class="destination-description">Un paraíso tropical con playas de arena blanca y aguas cristalinas.</p>
+          <a href="/destinos/bora-bora" class="btn-destination">Descubrir Más</a>
+        </div>
+      </div>
+
+      <div class="destination-card">
+        <img src="/path/to/destination2.jpg" alt="Destino 2">
+        <div class="destination-info">
+          <h2 class="destination-title">Kyoto</h2>
+          <p class="destination-description">Un lugar lleno de historia y cultura con templos antiguos y jardines hermosos.</p>
+          <a href="/destinos/kyoto" class="btn-destination">Descubrir Más</a>
+        </div>
+      </div>
+
+      <!-- Puedes agregar más tarjetas de destino aquí -->
+      
+    </div>
+  </div>
+</section>
+ </main>
+</body>
+<Footer/>
+<html/>
+
+

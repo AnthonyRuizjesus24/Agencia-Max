@@ -1,16 +1,35 @@
 ---
 import Header from '../Components/Header.astro';
-import Footer from '../Components/Footer.astro';
-import SearchBar from '../Components/SearchBar.astro';
 import FlightCard from '../Components/FlightCard.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/vuelos.css';
+
+const flights = [
+  {
+    image: '/assets/images/flight1.jpg',
+    route: 'Lima - Cusco',
+    price: '$120',
+    link: '/vuelos/lima-cusco'
+  },
+  {
+    image: '/assets/images/flight2.jpg',
+    route: 'Arequipa - Lima',
+    price: '$100',
+    link: '/vuelos/arequipa-lima'
+  },
+  // Agrega más vuelos según sea necesario
+];
 ---
-<MainLayout>
-  <Header />
-  <SearchBar placeholder="Buscar vuelos..." />
+<Header/>
   <section class="vuelos">
-    <h2>Vuelos Disponibles</h2>
-    <!-- Aquí puedes usar FlightCard para mostrar vuelos -->
+    <h1>Vuelos</h1>
+    <div class="flight-list">
+      <FlightCard 
+        image="/assets/images/flight1.jpg" 
+        flight="Vuelo a Destino 1" 
+        price="Desde $500" 
+        link="/vuelos/vuelo-1" 
+      />
+      <!-- More FlightCard components -->
+    </div>
   </section>
-  <Footer />
-</MainLayout>
+

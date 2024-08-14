@@ -1,16 +1,35 @@
 ---
-import Header from '../Components/Header.astro';
-import Footer from '../Components/Footer.astro';
-import SearchBar from '../Components/SearchBar.astro';
+
 import HotelCard from '../Components/HotelCard.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../Components/Header.astro';
+
+const hotels = [
+  {
+    image: '/assets/images/hotel1.jpg',
+    name: 'Hotel Cusco Plaza',
+    pricePerNight: '$80',
+    link: '/hoteles/hotel-cusco-plaza'
+  },
+  {
+    image: '/assets/images/hotel2.jpg',
+    name: 'Hotel Lima Centro',
+    pricePerNight: '$120',
+    link: '/hoteles/hotel-lima-centro'
+  },
+  // Agrega más hoteles según sea necesario
+];
 ---
-<MainLayout>
-  <Header />
-  <SearchBar placeholder="Buscar hoteles..." />
+<Header/>
   <section class="hoteles">
-    <h2>Hoteles Disponibles</h2>
-    <!-- Aquí puedes usar HotelCard para mostrar hoteles -->
+    <h1>Hoteles</h1>
+    <div class="hotel-list">
+      <HotelCard 
+        image="/assets/images/hotel1.jpg" 
+        hotel="Hotel en Destino 1" 
+        description="Descripción del hotel" 
+        link="/hoteles/hotel-1" 
+      />
+      <!-- More HotelCard components -->
+    </div>
   </section>
-  <Footer />
-</MainLayout>
+

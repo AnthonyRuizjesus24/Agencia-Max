@@ -1,13 +1,29 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/servicios.css';
+
 ---
-<MainLayout>
-  <Header />
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>MyF - Servicios</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <main>
+    <Header/>
+
   <section class="servicios">
-    <h2>Servicios Ofrecidos</h2>
-    <!-- Descripción de los servicios -->
+    <h1>Servicios</h1>
+    <p>Aquí puedes destacar los servicios que ofrece tu agencia de viajes.</p>
+    <!-- Agrega más contenido y secciones según sea necesario -->
   </section>
-  <Footer />
-</MainLayout>
+  </main>
+  <Footer/>
+</body>
+<html/>
+

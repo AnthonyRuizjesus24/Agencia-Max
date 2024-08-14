@@ -1,6 +1,8 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
+import '../styles/global.css';
+import ContactForm from '../Components/ContactForm.astro';
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -15,13 +17,12 @@ import Footer from '../Components/Footer.astro';
 <body>
   <main>
     <Header/>
-  <section class="blog">
-    <h1>Blog</h1>
-    <p>Aquí puedes compartir las últimas noticias y artículos sobre viajes.</p>
-    <!-- Agrega más contenido y secciones según sea necesario -->
+  <section class="contacto">
+    <h1>Contacto</h1>
+    <ContactForm />
   </section>
-  </main>
   <Footer/>
+  </main>
 </body>
 <html/>
 

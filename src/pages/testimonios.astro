@@ -1,13 +1,75 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/testimonios.css';
 ---
-<MainLayout>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>MyF - Testimonios</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="/styles/testimonios.css" />
+</head>
+<body>
   <Header />
-  <section class="testimonios">
-    <h2>Testimonios de Clientes</h2>
-    <!-- Aquí puedes mostrar testimonios de clientes -->
-  </section>
+
+  <main class="testimonios-page">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Lo Que Dicen Nuestros Clientes</h1>
+        <p>Descubre cómo hemos hecho realidad los sueños de nuestros viajeros a través de sus experiencias.</p>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container-home">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"¡Un viaje de ensueño! La atención personalizada y los destinos seleccionados hicieron que nuestro viaje fuera inolvidable."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="/images/customer1.jpg" alt="Cliente 1" class="author-photo" />
+            <div>
+              <h3>Juan Pérez</h3>
+              <p>Argentina</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"Todo estuvo perfectamente coordinado. Desde el primer contacto hasta el regreso, todo fue de alta calidad."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="/images/customer2.jpg" alt="Cliente 2" class="author-photo" />
+            <div>
+              <h3>Fernanda Sanchez de Ruiz</h3>
+              <p>Chile</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"La agencia superó todas nuestras expectativas. Las recomendaciones y la organización fueron excepcionales."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="/images/customer3.jpg" alt="Cliente 3" class="author-photo" />
+            <div>
+              <h3>Laura Martínez</h3>
+              <p>Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <Footer />
-</MainLayout>
+</body>
+</html>

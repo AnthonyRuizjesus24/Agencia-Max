@@ -1,16 +1,52 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
-import SearchBar from '../Components/SearchBar.astro';
 import CarCard from '../Components/CarCard.astro';
-import MainLayout from '../layouts/MainLayout.astro';
+import '../styles/autos.css';
+const cars = [
+  {
+    image: '/assets/images/car1.jpg',
+    model: 'Toyota Corolla',
+    price: '$50/día',
+    link: '/autos/toyota-corolla'
+  },
+  {
+    image: '/assets/images/car2.jpg',
+    model: 'Nissan Sentra',
+    price: '$45/día',
+    link: '/autos/nissan-sentra'
+  },
+  // Agrega más autos según sea necesario
+];
 ---
-<MainLayout>
-  <Header />
-  <SearchBar placeholder="Buscar autos..." />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>MyF - Agencia de Viajes</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <main>
+    <Header/>
+
   <section class="autos">
-    <h2>Autos Disponibles</h2>
-    <!-- Aquí puedes usar CarCard para mostrar autos -->
+    <h1>Autos</h1>
+    <div class="car-list">
+      <CarCard 
+        image="/tel-aviv.jpg" 
+        car="Auto en Destino 1" 
+        description="Descripción del auto" 
+        link="/autos/auto-1" 
+      />
+      <!-- More CarCard components -->
+    </div>
   </section>
-  <Footer />
-</MainLayout>
+  </main>
+  <Footer/>
+</body>
+<html/>
+

@@ -1,0 +1,96 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+/* Estilos generales para la página de testimonios */
+.testimonios-page {
+  display: flex; /* Usar flexbox para centrar contenido */
+  flex-direction: column; /* Apilar elementos en una columna */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 4rem 2rem; /* Espaciado interno */
+  background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%); /* Fondo con degradado */
+  color: #fff; /* Color de texto */
+  text-align: center; /* Centrar el texto */
+  min-height: 80vh; /* Altura mínima para ocupar al menos el 80% de la pantalla */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  border-radius: 8px; /* Bordes redondeados */
+  z-index: 0;
+  } 
+  /* Sección de Testimonios */
+
+  .container-home {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    z-index: 0;
+  }
+  
+  .testimonial {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
+  
+  .testimonial:hover {
+    transform: scale(1.03);
+  }
+  
+  .testimonial-content {
+    flex: 1;
+    z-index: 0;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 0;
+  }
+  
+  .author-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    z-index: 0;
+  }
+  
+  .testimonial-author h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007bff;
+    z-index: 0;
+  }
+  
+  .testimonial-author p {
+    margin: 0;
+    color: #555;
+    z-index: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+      z-index: 0;
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem;
+      z-index: 0;
+    }
+  }
+  
